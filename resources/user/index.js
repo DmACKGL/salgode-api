@@ -3,6 +3,7 @@ var destroy = require('./destroy');
 var list = require('./list');
 var read = require('./read');
 var update = require('./update');
+var forgot = require('./forgotPassword');
 
 module.exports = function(event, callback) {
   switch (event.operation) {
@@ -16,5 +17,7 @@ module.exports = function(event, callback) {
       return read(event, callback);
     case 'update':
       return update(event, callback);
+    case 'forgotPassword':
+      return forgot(event, callback);
   }
 };
